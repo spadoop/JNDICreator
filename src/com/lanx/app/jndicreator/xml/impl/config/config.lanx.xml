@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+	<database name="sysdb"
+		servername="localhost"
+		databasename="orcl"
+		port="1521"
+		username="system"
+        password="system"
+        driverClassName="oracle.jdbc.driver.OracleDriver"
+		properties="user=system"/>
+
+    <database name="bizdb1"
+		servername="192.168.1.12"
+		databasename="db2"
+		port="3306"
+		username="someone"
+        password="somekey"
+        driverClassName="oracle.jdbc.driver.OracleDriver"
+		properties="user=someone;key2=value2"/>
+
+    <connection bizurl="biz:\system\system.database"
+		database="sysdb"/>
+	<connection bizurl="biz:\space1\db1.database" 
+		database="bizdb1"/>
+
+	<server url="localhost"/>
+	<server name="sysserver" url="localhost"/>
+	<server name="bizserver" url="localhost"/>
+	<server name="imserver" url="localhost"/>
+	<server name="docserver" url="localhost"/>
+</Configuration>
